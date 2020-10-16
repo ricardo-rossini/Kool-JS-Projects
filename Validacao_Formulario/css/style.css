@@ -8,6 +8,8 @@ body{
     background-color: #6984a3;
     justify-content: center;
     align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: 	#2c3f66;
 }
 
 section{
@@ -25,6 +27,8 @@ section{
 
 .lado-esquerdo{
     flex: 1;
+    justify-content: center;
+    align-items: center;
 }
 
 .lado-esquerdo img{
@@ -35,4 +39,34 @@ section{
 .lado-direito{
     width: 40%;
     background-color: 	#8aa4c5;
+    border-radius: 10px;
+    padding: 5%;
+}
+
+.lado-direito label{
+    display: block;
+    margin-bottom: 20px;
+}
+
+.lado-direito input{
+    width: 100%;
+    border: 1px solid #4b6285;
+    border-radius: 5px;
+    padding: 8px;
+    font-size: 14px;
+    outline: 0;
+}
+
+button{
+    height: 35px;
+    width: 100%;
+    border-radius: 5px;
+    background-color: 	#4b6285;
+    color: #abc4e7;
+}
+
+a{
+    color: #2c3f66;
+    text-decoration: none;
+    font-weight: bold;
 }
