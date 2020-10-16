@@ -13,11 +13,11 @@
                 <img src="img/network-web-generic-02.png" alt="">
             </div>
             <div class="lado-direito">
-               <h2>Crie uma conta</h2>
-               <form action="" method="post">
+                <h2>Crie uma conta</h2>
+                <form action="" method="post" class="valida">
                     <label for="nome">
                         Nome Completo:<br/> 
-                        <input type="text" name="nome" id="nome">
+                        <input type="text" name="nome" id="nome"data-rules="required|min=2">
                     </label>
                     <label for="email">
                         Email:<br/> 
@@ -30,10 +30,10 @@
                     <label for="button">
                         <button type="submit">CADASTRAR</button>
                     </label>
-               </form>
-               <div>
-                   J&aacute; possui uma conta? Fa&ccedil;a o <a href="#">LOGIN</a>
-               </div>
+                </form>
+                <div>
+                    J&aacute; possui uma conta? Fa&ccedil;a o <a href="#">LOGIN</a>
+                </div>
             </div>
         </div>
     </section>
