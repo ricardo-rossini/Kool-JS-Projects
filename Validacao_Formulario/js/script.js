@@ -23,7 +23,7 @@ let validator = {
         let rules = input.getAttribute('data-rules');
         if(rules !== null) {
             rules = rules.split('|');
-            for(let k in rules) {
+            for(const k in rules) {
                 let rDetails = rules[k].split('=');
                 switch(rDetails[0]) {
                     case 'required':
@@ -37,14 +37,17 @@ let validator = {
                         }
                     break;
                     case 'email':
-                        
+                        if(input.value != ''){
+                            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if(!re.test(input.value.toLowerCase())){
+                                return 'Digite um email valido'
+                            }
+                        }
                     break;
                 }
             }
         }
-        else{
-            return true;
-        }
+    return true;
     },
     showError:(input, error) => {
         input.style.borderColor = '#FF0000';
