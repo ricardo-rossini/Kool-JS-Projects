@@ -37,6 +37,11 @@ header{
     height: inherit;
     background-position: center;
     background-size: cover;
+    color: #ffe4a3;
+    display: flex;
+    justify-content: stretch;
+    text-shadow: 0 1px 1px #a95c10;
+    font-size: 25px;
 }
 
 .slider-controls{
