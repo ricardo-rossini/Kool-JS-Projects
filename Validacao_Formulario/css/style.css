@@ -70,3 +70,10 @@ a{
     text-decoration: none;
     font-weight: bold;
 }
+
+.error{
+    font-size: 14px;
+    color: #ff0000;
+    font-weight: bold;
+    padding-top: 3px;
+}
