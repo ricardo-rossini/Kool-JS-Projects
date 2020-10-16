@@ -12,7 +12,7 @@ let validator = {
                 send = false;
                 //console.log(check);
                 validator.showError(input, check);
-            } 
+            }
         }
         // send = false;
         if(send) {
@@ -31,9 +31,13 @@ let validator = {
                             return 'Campo nao pode ser vazio.';
                         }
                     break;
-
-                    case min:
-
+                    case 'min':
+                        if(input.value.length < rDetails[1]) {
+                            return 'O campo nome deve ter pelo menos '+rDetails[1]+' caracteres';
+                        }
+                    break;
+                    case 'email':
+                        
                     break;
                 }
             }
