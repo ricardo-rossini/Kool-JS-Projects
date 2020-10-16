@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: #6984a3;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    margin: 5%;
+    background-color: #abc4e7;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+}
+
+.screen{
+    display: flex;
+    padding: 10px 10px;
+}
+
+.lado-esquerdo{
+    flex: 1;
+}
+
+.lado-esquerdo img{
+    margin-left: 18%;
+    width: 60%;
+}
+
+.lado-direito{
+    width: 40%;
+    background-color: 	#8aa4c5;
+}
