@@ -14,9 +14,11 @@ function verificaVelocidade(velocidade) {
         let pontos = 0;
         let velMaior = velocidade - velMax;
         pontos = Math.floor(velMaior / 5);
-        console.log(`voce recebeu ${pontos} pnto na carteira`);
         if(pontos >= 12){
             console.log('Sua carteira foi suspensa');
+        }
+        else{
+            console.log(`voce recebeu ${pontos} pnto na carteira`);
         }
     }
 }
