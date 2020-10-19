@@ -1,4 +1,4 @@
-const res = fizzBuzz(68);
+const res = fizzBuzz(15);
 console.log(res);
 
 function fizzBuzz(entrada){
@@ -6,7 +6,7 @@ function fizzBuzz(entrada){
         console.log('Nao eh um numero');
     }
     if(entrada % 3 === 0 && entrada % 5 === 0) {
-       return 'FizzBUzz!';
+       return 'FizzBuzz!';
     }
     else if(entrada % 3 === 0 ) {
        return 'Fizz!';
