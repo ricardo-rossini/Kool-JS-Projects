@@ -20,7 +20,7 @@ function verificaVelocidade(velocidade) {
             console.log('Sua carteira foi suspensa');
         }
         else{
-            console.log(`voce recebeu ${pontos} pnto na carteira`);
+            console.log(`voce recebeu ${pontos} pontos na carteira`);
         }
     }
 }

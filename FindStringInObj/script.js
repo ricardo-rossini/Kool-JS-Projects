@@ -1,0 +1,3 @@
+function exibirPropriedades(obj) {
+    
+}
