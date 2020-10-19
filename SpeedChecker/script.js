@@ -4,17 +4,19 @@
 
 function verificaVelocidade(velocidade) {
     const velMax = 70;
+    const kmPonto = 5;
     if(velocidade <= velMax) {
         console.log('OK!');
     }
-    if(velocidade > 70 && velocidade < 75) {
-        console.log('voce foi multado!');
+    if(velocidade > velMax && velocidade < (velMax + kmPonto)) {
+        console.log('voce recebeu 1 ponto!');
     }
-    if(velocidade >= 75){
-        let pontos = 0;
+    if(velocidade >= (velMax + kmPonto)){
+        let pontos = 1;
         let velMaior = velocidade - velMax;
-        pontos = Math.floor(velMaior / 5);
-        if(pontos >= 12){
+        const limitePonto = 12
+        pontos += Math.floor(velMaior / kmPonto);
+        if(pontos >= limitePonto){
             console.log('Sua carteira foi suspensa');
         }
         else{
