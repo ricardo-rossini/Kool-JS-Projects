@@ -3,15 +3,15 @@
 
 function exibirNumerosPrimos(lim) {
     for(i = 2; i <= lim; i++) {
-        let primo = true;
-        
+        if(numeroPrimo(i)) console.log(i);
+    }
+}
+
+function numeroPrimo(num) {    
         for(let divisor = 2; divisor < i; divisor++) {
             if(i % divisor === 0) {
-                primo = false;
-                break;
+                return false;
             }
         }
-
-    if(primo) console.log(i);
-    }
+        return true;
 }
