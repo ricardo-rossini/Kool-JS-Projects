@@ -6,7 +6,7 @@ function podeEntrar() {
     let anfitriao = document.getElementById('inviter').value;
     let res = document.querySelector('.res');
     res.innerHTML = 'Pesquisando...';
-    if(anfitriao === 'Jessica') {
+    /* if(anfitriao === 'Jessica') {
         for(co of convJessica) {
             if(convidado === co){
                 res.innerHTML = '<h1>Voce pode entrar</H1>'
@@ -18,5 +18,13 @@ function podeEntrar() {
     }
     else{
         res.innerHTML = '<h1>Voce NAO pode entrar</H1>'
+    } */
+
+    if(convJessica.includes(convidado)) {
+        res.innerHTML = '<h1>Voce pode entrar</H1>'
     }
+    else {
+        res.innerHTML = '<h1>Voce NAO pode entrar</H1>'
+    }
+    
 }
