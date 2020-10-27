@@ -10,5 +10,35 @@ body{
     background-position: center center;
     min-height: 100vh;
     font-family: 'Poppins', sans-serif;
+    align-items: center;
+    justify-content: center;
     margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+h1{
+    font-size: 3rem;
+    font-weight: normal;
+    margin-top: -20rem;
+}
+
+.countdown-container{
+    display: flex;
+}
+
+.big-text{
+    font-size: 5rem;
+    font-weight: bold;
+    line-height: 1;
+    margin: 0 1.5rem;
+}
+
+.countdown-el{
+    text-align: center;
+}
+
+.countdown-el span{
+    font-size: 1.2rem;
+    font-weight: bold;
 }
