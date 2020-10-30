@@ -7,7 +7,7 @@ const quizData = [
         d: "Pelotas",
         correct: 'c'
     },
-
+    
     {
         question: 'Como e conhecido o melhor amigo do detetive Sherlock Holmes?',
         a: 'Samuel',
@@ -16,7 +16,7 @@ const quizData = [
         d: 'Lestrad',
         correct: 'b'
     },
-
+    
     {
         question: 'Qual o peixe mais consumido no Brasil?',
         a: 'tilapia',
@@ -25,7 +25,7 @@ const quizData = [
         d: 'namorado',
         correct: 'a'
     },
-
+    
     {
         question: 'Qual a velocidade do som?',
         a: '1432km/h',
@@ -34,7 +34,7 @@ const quizData = [
         d: '1234km/h',
         correct: 'd'
     },
-
+    
     {
         question:'Qual personagem de Mauricio de oua eh o dono do Bidu?',
         a: 'Cebolinha',
@@ -46,6 +46,7 @@ const quizData = [
 ];
 
 let currentQuestion = 0;
+let score = 0;
 const questionEl = document.getElementById('question');
 const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
@@ -64,7 +65,28 @@ function loadQuiz() {
     d_text.innerText = currentQuizData.d;
 }
 
+function getSelected() {
+    const answerEls = document.querySelectorAll('.answer');
+    let answer = undefined;
+    answerEls.forEach(answerEl => {
+        if(answerEl.checked) {
+            answer = answerEl.id; 
+        }
+    });
+    return answer;
+}
+
 submitBtn.addEventListener('click', () => {
-    currentQuestion++;
-    loadQuiz();
+    const answer = getSelected();
+    console.log(answer);
+    if(answer) {
+        currentQuestion++;
+        if(currentQuestion < quizData.length) {
+            loadQuiz();
+        }
+        else{
+            //TODO: show results
+            alert('FIM DO QUIZ!!!');
+        }
+    }   
 });
