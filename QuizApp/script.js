@@ -96,8 +96,10 @@ submitBtn.addEventListener('click', () => {
             loadQuiz();
         }
         else{
-            quiz.innerHTML = `<h2>Voce acertou ${score}/${quizData.length} questoes</h2> 
-            <button onclick="location.reload()">Reiniciar</button>`;
+            quiz.innerHTML = 
+                `<h2>Voce acertou ${score}/${quizData.length} questoes</h2> 
+                <button onclick="location.reload()">Reiniciar</button>`
+            ;
         }
     }   
 });
