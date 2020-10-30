@@ -52,11 +52,13 @@ const a_text = document.getElementById('a_text');
 const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
+const answerEls = document.querySelectorAll('.answer');
 const submitBtn = document.getElementById('submit');
 
 loadQuiz();
 
 function loadQuiz() {
+    deselectAnswers()
     const currentQuizData = quizData[currentQuestion];
     questionEl.innerText = currentQuizData.question;
     a_text.innerText = currentQuizData.a;
@@ -66,7 +68,6 @@ function loadQuiz() {
 }
 
 function getSelected() {
-    const answerEls = document.querySelectorAll('.answer');
     let answer = undefined;
     answerEls.forEach(answerEl => {
         if(answerEl.checked) {
@@ -74,6 +75,12 @@ function getSelected() {
         }
     });
     return answer;
+}
+
+function deselectAnswers() {
+    answerEls.forEach(answerEl => {
+        answerEl.checked = false;
+    });
 }
 
 submitBtn.addEventListener('click', () => {
