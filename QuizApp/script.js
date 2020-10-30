@@ -53,6 +53,7 @@ const b_text = document.getElementById('b_text');
 const c_text = document.getElementById('c_text');
 const d_text = document.getElementById('d_text');
 const answerEls = document.querySelectorAll('.answer');
+const quiz = document.getElementById('quiz');
 const submitBtn = document.getElementById('submit');
 
 loadQuiz();
@@ -95,8 +96,8 @@ submitBtn.addEventListener('click', () => {
             loadQuiz();
         }
         else{
-            //TODO: show results
-            alert('FIM DO QUIZ!!!');
+            quiz.innerHTML = `<h2>Voce acertou ${score}/${quizData.length} questoes</h2> 
+            <button onclick="location.reload()">Reiniciar</button>`;
         }
     }   
 });
