@@ -38,11 +38,12 @@ header input{
     border: none;
     border-radius: 3px;
     padding: 0.52rem 1rem;
+    font-family: inherit;
 }
 
 header button{
     background-color: transparent;
-    color: #aaa;
+    color: rgb(138, 129, 141);
     border: none;
     font-size: 1.2rem;
     margin-left: 10px;
@@ -50,7 +51,7 @@ header button{
 
 .fav-container{
     background-color: #e9dff5;
-    padding: 1rem;
+    padding: 0.25rem 1rem;
     text-align: center;
 }
 
@@ -115,8 +116,14 @@ header button{
     margin: 0;
 }
 
-.meal-body button{
+.meal-body .fav-btn{
     background-color: transparent;
     border: none;
+    color: gray;
+    cursor: pointer;
     font-size: 1.2rem;
+}
+
+.meal-body .fav-btn.active{
+    color: rebeccapurple;
 }
