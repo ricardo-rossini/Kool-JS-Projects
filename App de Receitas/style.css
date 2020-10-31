@@ -21,7 +21,7 @@ img{
 .mob-container{
     background-color: #fff;
     width: 400px;
-    box-shadow: 0 0 5px #3333331A;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
     border-radius: 3px;
     overflow: hidden;
 }
@@ -56,13 +56,16 @@ header button{
 
 .fav-meals{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     list-style-type: none;
     padding: 0;
 }
-/* 
-.fav-meals li{
 
-} */
+.fav-meals li{
+    margin: 5px;
+    width: 85px;
+}
 
 .fav-meals li img{
     object-fit: cover;
@@ -74,4 +77,30 @@ header button{
 
 .fav-meals li span{
     font-size: 0.9rem;
+}
+
+.meal{
+    margin: 1.2rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.4);
+    border-radius: 3px;
+}
+
+.meal-header{
+    position: relative;
+}
+
+.meal-header .random{
+    position: absolute;
+    top: 10px;
+    padding: 0.25rem 0.5rem;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.meal-header img{
+
+}
+
+.meal-body{
+
 }
