@@ -21,6 +21,7 @@ async function getMealsBySearch(term) {
 function addMeal(mealData, random = false) {
     const meal = document.createElement('div');
     meal.classList.add('meal');
+    console.log(mealData);
 
     meal.innerHTML = `
         <div class="meal">
@@ -32,15 +33,39 @@ function addMeal(mealData, random = false) {
             </div>
             <div class="meal-body">
                 <h4>${mealData.strMeal}</h4>
-                <button class="fav-btn active">
-                    <i class="far fa-heart"></i>
+                <button class="fav-btn">
+                    <i class="fas fa-heart"></i>
                 </button>
             </div>
         </div>
     `;
 
-    meal.querySelector(".meal-body .fav-btn").addEventListener('click', () => {
-        alert('IDEIA VC EH FODA');
+    const btn = meal.querySelector(".meal-body .fav-btn");
+    btn.addEventListener("click", () => {
+        if(btn.classList.contains('active')) {
+            removeMealLS(mealData.idMeal);
+            btn.classList.remove("active");
+        }
+        else{
+            addMeadLS(mealData.idMeal);
+            btn.classList.add("active");
+        }
     });
     meals.appendChild(meal);
+}
+
+function addMeadLS(mealId) {
+    const mealIds = getMealsLS();
+    localStorage.setItem("mealIds", JSON.stringify([...mealIds, mealId]));
+}
+
+function removeMealLS(mealId) {
+    const mealIds = getMealsLS();
+    localStorage.setItem("mealIds", JSON.stringify(mealIds.filter(id => id !== mealId)));
+}
+
+function getMealsLS() {
+    const mealIds = JSON.parse(localStorage.getItem('mealIds'));
+
+    return mealIds;
 }
