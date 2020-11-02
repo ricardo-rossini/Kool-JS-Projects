@@ -1,12 +1,13 @@
 const meals = document.getElementById('meals');
 
 getRandomMeal();
+fetchFavMeals();
 
 async function getRandomMeal() {
     const resp = await fetch('https://www.themealdb.com/api/json/v1/1/random.php');
     const responseData = await resp.json();
     const randomMeal = responseData.meals[0];
-    console.log(randomMeal);
+    //console.log(randomMeal);
     addMeal(randomMeal, true);
 }
 
@@ -24,7 +25,7 @@ async function getMealsBySearch(term) {
 function addMeal(mealData, random = false) {
     const meal = document.createElement('div');
     meal.classList.add('meal');
-    console.log(mealData);
+    //console.log(mealData);
 
     meal.innerHTML = `
         <div class="meal">
@@ -73,6 +74,16 @@ function getMealsLS() {
     return mealIds === null ? [] : mealIds;
 }
 
-function fetchFavMeals() {
+async function fetchFavMeals() {
     const mealsIds = getMealsLS();
+    const meals = [];
+    for(let i = 0; i < mealsIds.lenght; i++) {
+        let mealId = mealsIds[i];
+
+        meal = await getMealById(mealId);
+        meals.push(meal);
+    }
+    console.log(meals);
+
+    // add it to the screen
 }
