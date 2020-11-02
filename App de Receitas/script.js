@@ -55,6 +55,10 @@ function addMeal(mealData, random = false) {
             addMeadLS(mealData.idMeal);
             btn.classList.add("active");
         }
+        //clean the container
+        favoriteContainer.innerHTML = '';
+        //add to container
+        fetchFavMeals();
     });
     meals.appendChild(meal);
 }
