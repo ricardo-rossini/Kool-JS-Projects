@@ -1,4 +1,5 @@
 const meals = document.getElementById('meals');
+const favoriteContainer = document.getElementById('fav-meals');
 
 getRandomMeal();
 fetchFavMeals();
@@ -25,7 +26,7 @@ async function getMealsBySearch(term) {
 function addMeal(mealData, random = false) {
     const meal = document.createElement('div');
     meal.classList.add('meal');
-    //console.log(mealData);
+    console.log(mealData);
 
     meal.innerHTML = `
         <div class="meal">
@@ -75,15 +76,22 @@ function getMealsLS() {
 }
 
 async function fetchFavMeals() {
-    const mealsIds = getMealsLS();
-    const meals = [];
-    for(let i = 0; i < mealsIds.lenght; i++) {
-        let mealId = mealsIds[i];
-
+    const mealIds = getMealsLS();
+    
+    for(let i = 0; i < mealIds.length; i++) {
+        const mealId = mealIds[i];
         meal = await getMealById(mealId);
-        meals.push(meal);
+        addMealFav(meal);
     }
-    console.log(meals);
+}
 
-    // add it to the screen
+function addMealFav(mealData) {
+    const favMeal = document.createElement('li');
+
+    favMeal.innerHTML = `
+        <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
+        <span>${mealData.strMeal}</span>
+    `;
+
+    favoriteContainer.appendChild(favMeal);
 }
