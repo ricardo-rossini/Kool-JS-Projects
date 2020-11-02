@@ -67,5 +67,5 @@ function removeMealLS(mealId) {
 function getMealsLS() {
     const mealIds = JSON.parse(localStorage.getItem('mealIds'));
 
-    return mealIds;
+    return mealIds === null ? [] : mealIds;
 }
