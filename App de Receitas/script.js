@@ -26,6 +26,7 @@ async function getMealsBySearch(term) {
     const resp = await fetch('https://www.themealdb.com/api/json/v1/1/search.php?s=' + term);
     const respData = await resp.json();
     const meals = respData.meals;
+    console.log(meals);
 
     return meals;
 }
@@ -115,7 +116,11 @@ function addMealFav(mealData) {
     favoriteContainer.appendChild(favMeal);
 }
 
-searchBtn.addEventListener('click', () => {
+searchBtn.addEventListener('click', async () => {
     const search = searchTerm.value; 
-    console.log(getMealsBySearch(search));
+    const meals = await getMealsBySearch(search);
+
+    meals.forEach(meal => {
+        addMeal(meal);
+    });
 });
