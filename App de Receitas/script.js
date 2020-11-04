@@ -2,6 +2,8 @@ const mealsEl = document.getElementById('meals');
 const favoriteContainer = document.getElementById('fav-meals');
 const searchTerm = document.getElementById('search-term');
 const searchBtn = document.getElementById('search');
+const mealPopup = document.getElementById('meal-popup');
+const popupCloseBtn = document.getElementById('close-popup');
 
 
 getRandomMeal();
@@ -127,4 +129,9 @@ searchBtn.addEventListener('click', async () => {
             addMeal(meal);
         });
     }
+});
+
+popupCloseBtn.addEventListener('click', () =>{
+    mealPopup.classList.add("hidden");
+    console.log('clicou');
 });

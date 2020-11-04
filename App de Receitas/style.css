@@ -165,6 +165,13 @@ header button{
     right: 0;
     bottom: 0;
 }
+
+.meal-info-container.hidden{
+    opacity: 0;
+    user-select: none;
+    pointer-events: none;
+}
+
 .meal-info{
     background-color: white;
     padding: 0 2rem;
