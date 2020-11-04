@@ -129,6 +129,18 @@ function addMealFav(mealData) {
 
 function showMealInfo(mealData) {
     mealInfoEl.innerHTML = '';
+
+    const ingredients = [];
+    //getting the ingredients and measures
+    for(let i = 1; i <= 20; i++) {
+        if(mealData['strIngredient'+i]) {
+            ingredients.push(`${mealData['strIngredient'+i]} / ${mealData['strMeasure'+i]}`)
+        }
+        else{
+            break;
+        }
+    }
+
     //update the meal info
     const mealEl = document.createElement('div');
     mealEl.innerHTML = `
@@ -136,10 +148,14 @@ function showMealInfo(mealData) {
         <img src="${mealData.strMealThumb}" alt="${mealData.strMeal}">
         <p>${mealData.strInstructions}
         </p>
+        <h3>Ingredients</h3>
         <ul>
-            <li>ing 1 / measure</li>
-            <li>ing 2 / measure</li>
-            <li>ing 3 / measure</li>
+            ${ingredients
+                .map(
+                    (ing) => 
+                `<li>${ing}</li>`
+                )
+                .join("")}
         </ul>
     `;
     mealInfoEl.appendChild(mealEl);
