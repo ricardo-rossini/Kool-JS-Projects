@@ -154,7 +154,7 @@ header button{
     color: rebeccapurple;
 }
 
-.meal-info-container{
+.popup-container{
     position: fixed;
     display: flex;
     align-items: center;
@@ -166,13 +166,12 @@ header button{
     bottom: 0;
 }
 
-.meal-info-container.hidden{
+.popup-container.hidden{
     opacity: 0;
-    user-select: none;
     pointer-events: none;
 }
 
-.meal-info{
+.popup{
     background-color: white;
     padding: 0 2rem;
     max-width: 600px;
@@ -181,11 +180,7 @@ header button{
     position: relative;
 }
 
-.meal-info h1{
-    text-align: center;
-}
-
-.meal-info .close-popup{
+.popup .close-popup{
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -193,4 +188,8 @@ header button{
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
+}
+
+.meal-info h1{
+    text-align: center;
 }
