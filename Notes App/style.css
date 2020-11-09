@@ -45,5 +45,9 @@ body{
     height: 100%;
     border: none;
     font-family: inherit;
-    outline: none;
+    outline: none   ;
+}
+
+.notes .hidden{
+    display: none;
 }
