@@ -21,6 +21,7 @@ body{
     position: fixed;
     top: 1rem;
     right: 1rem;
+    cursor: pointer;
 }
 
 .note{
@@ -47,7 +48,7 @@ body{
 }
 
 .note .main{
-    background-color: #fff;
+    background-color: #eee;
     height: 400px;
     width: 100%;
     font-size: 1.2rem;
