@@ -5,6 +5,31 @@
 }
 
 body{
+    background-color: #f5f5f5;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+}
+
+h1{
+    color: rgb(179, 111, 226);
+    text-align: center;
+    font-size: 10rem;
+    opacity: 0.4;
+}
+
+form{
+    margin: auto;
+    max-width: 100%;
+    width: 400px;
+}
+
+.input{
+    padding: 1rem 2rem;
+    display: block;
+    width: 100%;
+    font-size: 2rem;
+}
+
+.input::placeholder{
+    color: #b5b5b5;
 }
