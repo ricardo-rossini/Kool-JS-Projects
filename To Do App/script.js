@@ -1,12 +1,16 @@
 const form = document.getElementById('form');
 const input = document.getElementById('input');
+const todos = document.getElementById('todos');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
 
-    const todo = input.value;
+    const todoText = input.value;
     
-    if(todo) {
-        
+    if(todoText) {
+        const todoEl = document.createElement('li');
+        todoEl.innerHTML = todoText;
+        todos.appendChild(todoEl);
+        input.value = "";
     }
 });
