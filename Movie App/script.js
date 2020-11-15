@@ -3,15 +3,37 @@ const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 async function getMovies() {
     const resp = await fetch(APIURL);
     const respData = await resp.json();
+    const main = document.querySelector('main');
 
     console.log(respData);
 
-    /* respData.results.forEach(movie => {
-        const img = document.createElement('img');
-        img.src = IMGPATH + movie.poster_path;
-        document.body.appendChild(img);
-    }); */
+    respData.results.forEach(movie => {
+        const movieEl = document.createElement('div');
+        movieEl.classList.add('movie');
+        
+        movieEl.innerHTML = `
+        <img src="${IMGPATH + movie.poster_path}" alt="${movie.title}">
+        <div class="movie-info">
+            <h3>${movie.title}</h3>
+            <span class="${getClassByRate(movie.vote_average)}">${movie.vote_average}</span>
+        </div>
+        `;
+
+        main.appendChild(movieEl);
+    });
     return respData;
+}
+
+function getClassByRate(vote) {
+    if(vote >= 8) {
+        return 'green';
+    }
+    else if(vote >= 5) {
+        return 'orange';
+    }
+    else{
+        return 'red';
+    }
 }
 
 getMovies();

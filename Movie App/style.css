@@ -8,6 +8,12 @@ body{
     background-color: #22254b;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    align-items: center;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .movie{    
@@ -15,7 +21,7 @@ body{
     border-radius: 3px;
     box-shadow: 0 4px 5px rgba(0, 0, 0, 0.2);
     width: 300px;
-    margin: 2rem;
+    margin: 1.3rem;
 }
 
 .movie img{
@@ -25,9 +31,10 @@ body{
 .movie-info{
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 0.5rem 1rem 1rem;
     color: #eee;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
 }
 
 .movie-info h3{
@@ -38,4 +45,17 @@ body{
     background-color: #22254b;
     padding: 0.25rem 0.5rem;
     border-radius: 3px;
+    font-weight: bold;
+}
+
+.movie-info span.green{
+    color: rgb(62, 196, 62);
+}
+
+.movie-info span.orange{
+    color: orange;
+}
+
+.movie-info span.red{
+    color: red;
 }
