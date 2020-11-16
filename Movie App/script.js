@@ -31,6 +31,7 @@ function showMovies(movies) {
                 <span class="${getClassByRate(movie.vote_average)}">${movie.vote_average}</span>
             </div>
             <div class="overview">
+                <h4>Overview: </h4>
                 ${movie.overview}
             </div>
         `;

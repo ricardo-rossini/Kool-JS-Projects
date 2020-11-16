@@ -92,7 +92,8 @@ main{
     background-color: #fff;
     padding: 2rem;
     position: absolute;
-    top: 0;
+    max-height: 100%;
+    overflow: auto;
     left: 0;
     right: 0;
     bottom: 0;
