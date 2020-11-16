@@ -2,7 +2,7 @@ const APIURL = 'https://api.themoviedb.org/3/discover/movie?api_key=8c5e3d4cce9e
 const IMGPATH = 'https://image.tmdb.org/t/p/w1280';
 const SEARCHAPI = 'https://api.themoviedb.org/3/search/movie?api_key=8c5e3d4cce9e66b58c25c2bd8b9db469&query=';
 const main = document.querySelector('main');
-const form = document.querySelector('form');
+const form = document.getElementById('form');
 const search = document.getElementById('search');
 
 //getting fav movies
@@ -29,6 +29,9 @@ function showMovies(movies) {
             <div class="movie-info">
                 <h3>${movie.title}</h3>
                 <span class="${getClassByRate(movie.vote_average)}">${movie.vote_average}</span>
+            </div>
+            <div class="overview">
+                ${movie.overview}
             </div>
         `;
 
