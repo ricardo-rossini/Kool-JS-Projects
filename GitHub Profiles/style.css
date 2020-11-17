@@ -6,7 +6,7 @@
 
 body{
     background-color: #2a2a72;
-    background-image: linear-gradient(310deg, #0c679c 0%, #2a2a72 64%);
+    background-image: linear-gradient(310deg, #2a2a72 0%, #2a2a72 64%);
     font-family: 'Poppins', sans-serif;
     margin: 0;
     display: flex;
@@ -14,4 +14,44 @@ body{
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+}
+
+.card{
+    background-color: #3b2066;
+    background-image: linear-gradient(310deg, #3b2066 0%, #4c11ac 64%);
+    display: flex;
+    padding: 3rem;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+        0 15px 40px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+}
+
+.img-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.avatar{
+    height: 150px;
+    width: 150px;
+    border: 10px solid #2a2a72;
+    border-radius: 50%;
+}
+
+.user-info{
+    color: #eee;
+    margin-left: 2rem;
+}
+
+.user-info h2{
+    margin-top: 0;
+}
+
+.user-info ul{
+    display: flex;
+    justify-content: space-between;
+    max-width: 300px;
+    list-style-type: none;
 }
