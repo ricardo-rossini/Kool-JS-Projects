@@ -5,11 +5,17 @@ const search = document.getElementById('search');
 
 getUser("ricardo-rossini");
 
-async function getUser(user) {
-    const resp = await fetch(APIURL + user);
+async function getUser(username) {
+    const resp = await fetch(APIURL + username);
     const respData = await resp.json();
 
     createUserCard(respData);
+    getRepos(username);
+}
+
+async function getRepos(username) {
+    const resp = await fetch(APIURL + username);
+    
 }
 
 function createUserCard(user) {
@@ -23,13 +29,17 @@ function createUserCard(user) {
                 <p>${user.bio}</P>
 
                 <ul class="info">
-                    <li>${user.followers}</li>
-                    <li>${user.following}</li>
-                    <li>${user.public_repos}</li>
+                    <li><i class="far fa-eye"></i>${user.followers}</li>
+                    <li><i class="far fa-user-circle"></i>${user.following}</li>
+                    <li><i class="far fa-folder-open"></i>${user.public_repos}</li>
                 </ul>
             </div>
+            <ul class="repos" id="repos">
+
+            </ul>
         </div>
     `;
+
     main.innerHTML = cardHTML;
 }
 
