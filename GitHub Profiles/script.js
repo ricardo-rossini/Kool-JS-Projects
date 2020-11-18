@@ -49,8 +49,9 @@ function createUserCard(user) {
                     <li><i class="far fa-user-circle"></i>${user.following}</li>
                     <li><i class="far fa-folder-open"></i>${user.public_repos}</li>
                 </ul>
+                <div id="repos">
+                </div>
             </div>
-            <div class="repos" id="repos"></div>
         </div>
     `;
 

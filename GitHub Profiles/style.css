@@ -73,8 +73,15 @@ input:focus{
 .user-info ul{
     display: flex;
     justify-content: space-between;
-    max-width: 300px;
+    width: 400px;
     list-style-type: none;
+}
+
+.repo{
+    background-color: #2a2a72;
+    display: inline-block;
+    color: white;
+    padding: 0.25rem;
 }
 
 i{
