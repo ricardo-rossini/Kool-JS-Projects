@@ -23,7 +23,7 @@ async function getRepos(username) {
 function addReposToCard(repos) {
     const reposEl = document.getElementById('repos');
     console.log(repos);
-    repos.forEach(repo => {
+    repos.sort((a, b) => b.stargazers_count - a.stargazers_count).slice(0, 10).forEach(repo => {
         const repoEl = document.createElement('a');
         repoEl.classList.add('repo');
         repoEl.href = repo.html_url;
@@ -49,7 +49,7 @@ function createUserCard(user) {
                     <li><i class="far fa-user-circle"></i>${user.following}</li>
                     <li><i class="far fa-folder-open"></i>${user.public_repos}</li>
                 </ul>
-                <h4>Repos:</h4>
+                
                 <div id="repos">
                 </div>
             </div>
