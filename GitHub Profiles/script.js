@@ -14,8 +14,24 @@ async function getUser(username) {
 }
 
 async function getRepos(username) {
-    const resp = await fetch(APIURL + username);
-    
+    const resp = await fetch(APIURL + username + '/repos');
+    const respData = await resp.json();
+
+    addReposToCard(respData);
+}
+
+function addReposToCard(repos) {
+    const reposEl = document.getElementById('repos');
+    console.log(repos);
+    repos.forEach(repo => {
+        const repoEl = document.createElement('a');
+        repoEl.classList.add('repo');
+        repoEl.href = repo.html_url;
+        repoEl.target = "_blank";
+        repoEl.innerText = repo.name;
+
+        reposEl.appendChild(repoEl);
+    });
 }
 
 function createUserCard(user) {
@@ -34,9 +50,7 @@ function createUserCard(user) {
                     <li><i class="far fa-folder-open"></i>${user.public_repos}</li>
                 </ul>
             </div>
-            <ul class="repos" id="repos">
-
-            </ul>
+            <div class="repos" id="repos"></div>
         </div>
     `;
 
