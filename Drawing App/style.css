@@ -5,6 +5,17 @@
 }
 
 body{
+    background-color: #f5f5f5;
     font-family: 'Poppins', sans-serif;
     margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+canvas{
+    width: 500px;
+    height: 500px;
+    border: 1px solid #000;
 }
