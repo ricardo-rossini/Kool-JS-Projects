@@ -25,8 +25,13 @@ function addWeatherToPage(data) {
 
     weather.innerHTML = `
         <h2>${temp}°C</h2>
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
         <p>${search.value}</p>
     `;
+    search.value = '';
+
+    // Cleaning prevous search
+    main.innerHTML = '';
 
     main.appendChild(weather);
 }
