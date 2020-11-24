@@ -20,6 +20,7 @@ input{
     border: none;
     border-radius: 25px;
     padding: 1rem;
+    font-size: 1rem;
     font-family: inherit;
     outline: none;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
@@ -28,13 +29,13 @@ input{
 
 .weather{
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
 }
 
 .weather h2{
     margin-bottom: 0;
+    align-items: center;
+    display: flex;
 }
 
-.weather img{
-    transform: scale(2);
-}
+

@@ -21,12 +21,12 @@ function addWeatherToPage(data) {
     const temp = KtoC(data.main.temp);
 
     const weather = document.createElement('div');
-    weather.classList.add('weater');
+    weather.classList.add('weather');
 
     weather.innerHTML = `
-        <h2>${temp}°C</h2>
-        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" />
-        <p>${search.value}</p>
+        <p>${search.value}</p> 
+        <h2><img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png"/>${temp}°C</h2>
+        <small>${data.weather[0].main}</small>
     `;
     search.value = '';
 
